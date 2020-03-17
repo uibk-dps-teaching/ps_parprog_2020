@@ -19,7 +19,7 @@ LCC2 is a cluster of the University of Innsbruck reserved exclusively for teachi
 
 ### General
 
-LCC2 is located on-campus and provides a single login node (`lcc2.uibk.ac.at`) and multiple compute nodes (`n000`-`n0XX`). The submission system used by LCC2 is SGE (Sun Grid Engine). Each node consists of two Intel Xeon L5420 quad-core processors and 32 GB of main memory.
+LCC2 is located on-campus and provides a single login node (`lcc2.uibk.ac.at`) and multiple compute nodes (`n000`-`n0XX`). The submission system used by LCC2 is SGE (Sun Grid Engine). Each node consists of two Intel Xeon L5420 quad-core processors and 32 GB of main memory. **The system is reachable only from within the UIBK network (requires VPN when working from home).**
 
 More documentation can be found on the ZID website https://www.uibk.ac.at/zid/systeme/hpc-systeme/lcc2/.
 
@@ -34,6 +34,7 @@ While you should consult the SGE documentation (e.g. https://www.uibk.ac.at/zid/
 * `qsub <jobscript>` - submit a job
 * `qdel <job ID>` - delete a job before or during execution
 * `qstat` - show queued jobs of the cluster
+* `qlogin`/`qrsh` - login interactively on a compute node (for short debugging sessions only, don't leave this open/idle!)
 
 ### SGE Example Job Script for OpenMP applications
 
@@ -58,7 +59,7 @@ While all commands can also be given to `qsub` on the command line, users usuall
 # Join the error stream to the output stream.
 #$ -j yes
 
-# Parallel environment for using OpenMP
+# Parallel environment for using OpenMP, allocates 8 cores on a single node
 #$ -pe openmp 8
 
 # Use gcc 8.2.0 as the default gcc
