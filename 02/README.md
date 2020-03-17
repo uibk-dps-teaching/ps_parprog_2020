@@ -39,8 +39,9 @@ for (size_t j = 0; j < n; ++j) {
 
 ### Tasks
 
-- For both implementations, give a function f to calculate the number of data cache read misses for the matrix size n and the cache line size s in an 8-way set-associative cache. Assume that all variables are initialized appropriately (the matrix elements are of type `int32_t`) and that the matrices are stored in contiguous memory in row-major order. Additionally, the matrices are too large to store them entirely in the cache (n >> l).
-- Use the two snippets to implement two versions of the Hadamard product. Log into the LCC2 cluster and use `cachegrind` to evaluate the cache behavior. Can you validate your theoretical findings? Document your results appropriately.
+- For both implementations, give a function f to calculate the number of data cache read misses for the matrix size n and the cache line size s in an 8-way set-associative cache. Assume that all variables are initialized appropriately (the matrix elements are of type `int32_t`) and that the matrices are stored in contiguous memory in row-major order. Additionally, the matrices are too large to store them entirely in the cache (n >> s).
+- Use the two snippets to implement two versions of the Hadamard product. 
+- Log into the LCC2 cluster and analyze the cache behavior of the implementations using `cachegrind` and `perf`. Can you validate your theoretical findings? Compare the results of both tools.
 
 
 ## Exercise 3 (1 Point)
@@ -53,12 +54,12 @@ There are several methods to approximate Pi numerically. In this exercise, you a
 
 - Implement a serial version of Monte Carlo Pi approximation.
 - Implement a parallel version of Monte Carlo Pi approximation using POSIX Threads Library (`pthread`).
-- Benchmark the sequential version and the parallel version with 1, 2, 4, and 8 threads using `perf` on LCC2. How could you improve program performance?
+- Benchmark the sequential version and the parallel version with 1, 2, 4, and 8 threads on LCC2 using n = 1,000,000. Document your results. How could you improve program performance?
 
 
 ## General Notes
 
-All the material required by the tasks above (e.g. code, figures, text, etc...) must be part of the solution that is handed in. Your experiments should be reproducible and comparable to your measurements using the solution materials that you hand in.
+All the material required by the tasks above (e.g., code, figures, text, etc...) must be part of the solution that is handed in. Your experiments should be reproducible and comparable to your measurements using the solution materials that you hand in.
 
 **Every** member of your group must be able to explain the given problem, your solution, and possible findings. You may also need to answer detailed questions about any of these aspects.
 
