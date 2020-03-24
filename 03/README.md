@@ -41,5 +41,3 @@ This exercise consist of extending the Hadamard product implementation of the pr
 All the material required by the tasks above (e.g., code, figures, text, etc...) must be part of the solution that is handed in. Your experiments should be reproducible and comparable to your measurements using the solution materials that you hand in.
 
 **Every** member of your group must be able to explain the given problem, your solution, and possible findings. You may also need to answer detailed questions about any of these aspects.
-
-## Exercise 3 (1 Point)
