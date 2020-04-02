@@ -22,7 +22,7 @@ This exercise consists of implementing the Monte Carlo Pi approximation of assig
 
 ### Description
 
-This exercise deals with performance analysis and improvement of a given [code](ex2.c). The program reads a matrix size n from the command-line. Then two square matrices a and b of size n*n are filled with random numbers. Finally, the program should print the sum of all elements of matrix c and the wall clock time after the matrix multiplication c=a*b was conducted. 
+This exercise deals with performance analysis and improvement of a given [code](ex2.c). The program reads a matrix size n from the command-line. Then two square matrices a and b of size n\*n are filled with random numbers. Finally, the program should print the sum of all elements of matrix c and the wall clock time after the matrix multiplication c=a\*b was conducted. 
 
 ### Tasks
 
