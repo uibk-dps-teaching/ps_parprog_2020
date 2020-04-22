@@ -8,32 +8,30 @@
 //some random seed, always same for reproducibility
 #define SEED 15151532
 
-int main(int argc, char const *argv[])
-{
+int main() {
     long nr_of_points_inside = 0;
 
-    #pragma omp parallel
+#pragma omp parallel
     {
-        double x,y;
+        double x, y;
         //seed dependant on thread_num, that each thread has own seed
-        unsigned int seed = 15151532+omp_get_thread_num();
+        unsigned int seed = SEED + omp_get_thread_num();
 
         // reduction gets translated to a private variable which is incremented in the loop
         // and atomic operation of reduction gets done at the end of the loop in an atomic clause
-        #pragma omp for reduction(+:nr_of_points_inside)
-        for (long i=0; i<N;i++)
-        {
-            x = (double)rand_r(&seed) / RAND_MAX;
-            y = (double)rand_r(&seed) / RAND_MAX;
+#pragma omp for reduction(+:nr_of_points_inside)
+        for (long i = 0; i < N; i++) {
+            x = (double) rand_r(&seed) / RAND_MAX;
+            y = (double) rand_r(&seed) / RAND_MAX;
 
 
-            if(x*x + y*y <= 1)
+            if (x * x + y * y <= 1)
                 nr_of_points_inside++;
         }
 
     }
     double pi;
-    pi=4*((double) nr_of_points_inside / N);
+    pi = 4 * ((double) nr_of_points_inside / N);
 
     printf("Pi: %lf\n", pi);
     return EXIT_SUCCESS;
