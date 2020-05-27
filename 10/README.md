@@ -8,7 +8,7 @@ The goal of this assignment is to parallelize an unknown application using profi
 
 The file [real.tar.gz](real.tar.gz) contains a realistic implementation of a (simple) numerical algorithm. Imagine you are tasked with making this implementation faster by parallelizing it with OpenMP, without any further information. To that end, this exercise consists in analysing the performance of this application with `gprof`, a sample-based profiler, in order to figure out where to start with the parallelization.
 
-Using `gprof` requires three steps: First, the application needs to be compiled with the flag `-pg`. This causes the compiler to put instrumentation code in the executable. Then, run the application normally, which will produce a new file `gmon.out`. Finally, run `gprof <executable> gmon.out > analysis.txt` in order to obtain the analysis results. Add the `--line` flag to `gprof` if you need more fine-grained information.
+Using `gprof` requires three steps: First, the application needs to be compiled with `gcc` and the flag `-pg`. This causes the compiler to put instrumentation code in the executable. Then, run the application normally, which will produce a new file `gmon.out`. Finally, run `gprof <executable> gmon.out > analysis.txt` in order to obtain the analysis results. Add the `--line` flag to `gprof` if you need more fine-grained information.
 
 ### Tasks
 
